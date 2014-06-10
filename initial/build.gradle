@@ -1,9 +1,9 @@
 buildscript {
     repositories {
-        maven { url "http://repo.spring.io/libs-milestone" }
+        maven { url "http://repo.spring.io/libs-release" }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.2.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.0.RELEASE")
     }
 }
 
@@ -19,11 +19,11 @@ project('gs-yarn-basic-single-app') {
     version =  '0.1.0'
     repositories {
         mavenCentral()
-        maven { url "http://repo.spring.io/libs-milestone" }
+        maven { url "http://repo.spring.io/libs-release" }
     }
     dependencies {
-        compile("org.springframework.data:spring-yarn-boot:2.0.0.RC4")
-        testCompile("org.springframework.data:spring-yarn-boot-test:2.0.0.RC4")
+        compile("org.springframework.data:spring-yarn-boot:2.0.0.RELEASE")
+        testCompile("org.springframework.data:spring-yarn-boot-test:2.0.0.RELEASE")
         testCompile("org.hamcrest:hamcrest-core:1.2.1")
         testCompile("org.hamcrest:hamcrest-library:1.2.1")
     }

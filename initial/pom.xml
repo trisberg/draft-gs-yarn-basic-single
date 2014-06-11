@@ -7,7 +7,7 @@
     <groupId>org.springframework</groupId>
     <artifactId>gs-yarn-basic-single</artifactId>
     <version>0.1.0</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -15,15 +15,26 @@
         <version>1.1.0.RELEASE</version>
     </parent>
 
-    <modules>
-        <module>gs-yarn-basic-single-app</module>
-    </modules>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-yarn-boot</artifactId>
             <version>2.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-yarn-boot-test</artifactId>
+            <version>2.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>1.2.1</version>
         </dependency>
     </dependencies>
 
@@ -32,6 +43,24 @@
             <plugin> 
                 <artifactId>maven-compiler-plugin</artifactId> 
                 <version>2.3.2</version> 
+            </plugin>
+<!--
+             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+ -->
+             <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -38,7 +38,7 @@
 
     <repositories>
         <repository>
-            <id>spring-snapshots</id>
+            <id>spring-release</id>
             <url>http://repo.spring.io/libs-release</url>
             <snapshots><enabled>false</enabled></snapshots>
         </repository>
@@ -46,7 +46,7 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>spring-snapshots</id>
+            <id>spring-release</id>
             <url>http://repo.spring.io/libs-release</url>
             <snapshots><enabled>false</enabled></snapshots>
         </pluginRepository>

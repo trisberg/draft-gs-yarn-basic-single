@@ -26,7 +26,7 @@ projects: [spring-hadoop]
 :icons: font
 :source-highlighter: prettify
 :project_id: gs-yarn-basic
-:yarn_base_dist: gs-yarn-basic-single-app
+:yarn_base_dist: gs-yarn-basic-single
 This guide walks you through the process of creating a Spring Hadoop YARN application.
 
 == What you'll build
@@ -74,10 +74,10 @@ In the above gradle build file we simply create three different jars, each havin
 
 Here you create `Application` and `HelloPojo` classes.
 
-`gs-yarn-basic-single-app/src/main/java/hello/Application.java`
+`src/main/java/hello/Application.java`
 [source,java]
 ----
-include::complete/gs-yarn-basic-single-app/src/main/java/hello/Application.java[]
+include::complete/src/main/java/hello/Application.java[]
 ----
 
 In the above `Application`, notice how we added the
@@ -121,12 +121,12 @@ configuration and detected condition on {YarnClient}[`YarnClient`],
 
 == Create an Application Configuration
 
-Create a new yaml configuration file for gs-yarn-basic-single-app project.
+Create a new yaml configuration file for gs-yarn-basic-single project.
 
-`gs-yarn-basic-single-app/src/main/resources/application.yml`
+`src/main/resources/application.yml`
 [source,yaml]
 ----
-include::complete/gs-yarn-basic-single-app/src/main/resources/application.yml[]
+include::complete/src/main/resources/application.yml[]
 ----
 
 NOTE: Pay attention to the `yaml` file format which expects correct indentation and no tab characters.
@@ -145,7 +145,7 @@ To accomplish this, simply run your executable client jar from the projects root
 
 [source]
 ----
-$ java -jar gs-yarn-basic-single-app/target/gs-yarn-basic-single-app-0.1.0.jar
+$ java -jar target/gs-yarn-basic-single-0.1.0.jar
 ----
 
 To find Hadoop's application logs, you need to do a simple find within the hadoop clusters configured userlogs directory.
